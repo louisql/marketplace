@@ -1,0 +1,178 @@
+body{
+    background-color: #eaeded;
+}
+
+.wrapper{
+    max-width: 1500px;
+}
+
+.panneauAchatTimbre{
+    background-color: #f1f1f1;
+    width: 80%;
+    margin-left: 50px;
+    height: 90%;
+    justify-self: center;
+}
+
+.panneauAchatTimbre > div{
+    justify-content: flex-start;
+}
+
+
+.containeurBoutons .sendEnchere {
+    all: unset;
+    background-color: #2e3c71;
+    border-color: #fff;
+    border-radius: 8px;
+    color: #fff;
+    margin-left: auto;
+    padding: 15px 40px;
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.enchereTextField{
+
+    border-radius: 8px;
+
+}
+
+
+
+.boutonEnchereContainer{
+    display: flex;
+}
+
+@media only screen and (max-width: 1300px) {
+    .boutonEnchereContainer {
+        display: block;
+    }
+    .enchereTextField{
+        height: 35px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .grid-content article{
+        max-height: 655px !important;
+    }
+  }
+
+.panneauAchatTimbre>div>p:nth-child(2) {
+    margin-left: auto;
+}
+
+.wrapper .panneauLateralPhotos{
+    display: flex;
+    align-items: center;
+    height: 80%;
+    box-shadow: none;
+    width: 70%;
+}
+
+.panneauLateralPhotos > picture {
+    width: 50%;
+    padding: 10px 0px;
+}
+
+
+
+.content.grid-content .imgPrincipaleFiche{
+    height: 80%;
+    width: initial;
+}
+
+.wrapper .content.grid-content picture{
+    margin-top: 0px;
+    align-items: center;
+}
+
+.content.grid-content{
+    /* margin: 0px 20px; */
+}
+
+
+/*------------------------------Gestion Description ---------------------------*/
+.wrapper .descriptionProduit {
+    /* background-color: #6b6b6b; */
+    display: flex;
+    flex-direction: column;
+}
+
+.descriptionProduit .search{
+    float: none;
+}
+
+.descriptionProduit h2{
+    text-align: center;
+}
+
+
+.search input{
+    /* width: 300px; */
+    padding: 30px 110px;
+}
+
+.search button{
+    height:60px;
+    width: 60px;
+    border-radius: 40px;
+}
+
+.wrapper.wrapperFicheProduit .descriptionProduit .sectionDetail{
+    margin-bottom: 100px;
+    font-size: unset;
+    /* background-color: black; */
+
+}
+
+.wrapper .content.grid-content{
+    margin-bottom: 70px;
+    align-self: center;
+}
+
+.descriptionProduit h2{
+    font-family: 'Cinzel', serif;
+    font-size: 1.3rem;
+
+}
+
+.descriptionProduit h3{
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+}
+
+.content.grid-content.titredescription{
+    margin-bottom: 0px;
+}
+
+.pDescription p{
+    font-size: 1.3rem;
+    margin: 0 0 20px 0;
+    padding-right: 20px;
+}
+
+.wrapper .descriptionProduit .pDescription{
+    margin-bottom: 80px;
+}
+
+.pDescription p{
+    line-height: 30px;
+}
+
+.pDescription ul{
+    list-style-type: none;
+
+}
+
+.subContainerFooter + *{
+    flex-basis: 20%;
+}
+
+.containeurRecommandations{
+    width: 100%;
+}
+
+.containeurBoutons{
+    margin-top: 30px;
+}

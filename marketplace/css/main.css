@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "./composants/ficheProduit.css";
+@import "./composants/banniereHero.css";
+@import "./composants/newsCard.css";
+@import "./composants/inscriptionNewsletter.css";
+@import "./composants/header.css";
+@import "./composants/footer.css";
+@import "./miseEnPage.css";
+@import "./composants/grilleCatalogue.css";
+@import "./composants/burger.css";
+@import "./composants/menuMobile.css";
+@import "./composants/formulaireInscription.css";
+@import "./membre.css";
+
+*{
+  /* border: 1px red dotted; */
+}
+
+:root {
+  --main-bg-color: #1f284b;
+  --button-bg-color: rgba(62,80,151,1)
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  font-family: "Open Sans", "sans-serif";
+  background-color: #fff;
+  color: #444;
+}
+
+h1,
+p {
+  /* margin: 0 0 1em 0; */ /* Je teste d'enlever le margin pour qu'il n'y ait pas de decallage entre la taille de l'aside et de la grid */
+}
+
+h2{
+  font-family: 'Montserrat', sans-serif;
+}
+
+.wrapper {
+  /* max-width: 940px; */
+  /* margin: 0 20px; */
+  display: grid;
+  grid-gap: 10px;
+}
+
+
+
+/*---------Gestion Sidebard ------------------*/
+
+.search input[type=text]{
+  width:75%;
+  height:30px;
+  border-radius:20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  /* border: none; */
+}
+
+@media only screen and (max-width: 1100px){
+  
+  .search input{
+    /* width: 300px; */
+    padding: 30px 10px;
+}
+}
+
+@media only screen and (max-width: 1100px){
+
+}
+
+
+
+.search form{
+  display: flex;
+    align-items: center;
+}
+
+.sidebar{
+  display: flex;
+    flex-direction: column;
+}
+   
+.search button{
+  background-color: #cbcbcb;
+  border-radius: 20%;
+  color: #f2f2f2;
+  float: right;
+  margin-left: 10px;
+  padding: 5px 10px;
+  font-size: 12px;
+  border: none;
+  cursor: pointer;
+}
+
+.sidebar h1{
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  border-bottom: 1px black solid;
+  margin: 30px 40px 5px 10px;
+}
+
+.listeCategorie{
+  display: flex;
+}
+
+.listeCategorie span:last-child{
+margin-left: auto;
+}
+
+.sidebar ul{
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar + * {
+  margin-top: 10px;
+}
+
+.sidebar div{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  padding: 0px 10px;
+}
+
+.sidebar div ul li, .sidebar div div{
+margin-top: 10px;
+color: #575760;
+padding: 0px 10px;
+
+}
+
+.search{
+  margin-top: 40px;
+}
+
+.containeurBoutonsAff{
+  display: flex;
+  /* justify-content: space-between; */
+}
+
+.bouttonsListe{
+  /* margin: 5px; */
+  width: 40%;
+  border: none;
+  padding: 5px 10px;
+  margin: 10px 5px;
+}
+
+
+/*Masque la fleche et les catégories pour la vue mobile
+/* details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+} */
+
+/*---------Gestion slider prix------------------*/
+
+.sidebar>picture>img{
+  width: 100%;
+}
+
+
+/*---------Fin Gestion slider prix ----------------*/
+
+
+/*---------Fin Gestion Sidebar ------------------*/
+
+/*---------Gestion Carte------------------*/
+
+article{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+article>*{
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  width: 90%;
+}
+
+article>img{
+  object-fit: cover;
+}
+
+article>span{
+  justify-content: flex-start;
+}
+
+.flexForm{
+  display: flex ;
+  flex-direction: column ;
+  align-items: center ;
+}
+
+.boutonEnchereContainer{
+  margin-top: 10px;
+}

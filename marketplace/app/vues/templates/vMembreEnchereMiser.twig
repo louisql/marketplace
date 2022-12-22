@@ -1,0 +1,23 @@
+<pre>
+{{oUtilisateur.utilisateur_id  | json_encode(constant('JSON_PRETTY_PRINT')) }}
+{{enchere_id  | json_encode(constant('JSON_PRETTY_PRINT')) }}
+
+<section>
+  <h1>{{ titre|upper }}</h1>
+  
+  {# <form method="POST" action="admin?entite=utilisateur&action=a" class="signupForm"> #}
+  <form method="POST" action="membre?entite=enchere&action=m&utilisateur_id={{ oUtilisateur.utilisateur_id  }}&enchere_id={{ enchere_id }}" class="signupForm">
+
+    <label>Montant de l'enchère</label>
+    <input type="number" name="mise_montant" value="{{ membre.mise_montant }}"> {# Verifier su je mets mise plutot que membre avant le point #}
+    {# <input type="number" name="mise_montant" value="{{ utilisateur.utilisateur_nom }}"> #}
+
+
+    <span class="errorField">&nbsp;{{ erreurs.nom }}</span>
+
+    <input type="submit" value="Envoyer">
+
+  </form>
+
+
+</section>

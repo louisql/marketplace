@@ -1,0 +1,298 @@
+/*------Gestion Grid Contenu*/
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--largeurMin), 1fr));
+  gap: 20px;
+}
+
+.reducedFontSizeFicheProduit{
+  font-size: 85%;
+}
+
+.content > article,
+.wrapper > aside {
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.12);
+  margin: 0px 0px;
+}
+
+@media screen {
+  :root {
+    --nbColonnes: 2;
+    --largeurMin: 300px;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  :root {
+    --nbColonnes: 3;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  :root {
+    --nbColonnes: 4;
+  }
+}
+
+.descriptionProduit .content.grid-content.pDescription {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.content.grid-content.pDescription p,
+.content.grid-content.pDescription ul,
+.content.grid-content.pDescription h3 {
+  text-align: center;
+  padding-left: 0;
+}
+
+/*---------Fin Gestion Grid Contenu*/
+
+@media screen and (min-width: 500px) {
+  /* no grid support? */
+  .sidebar {
+    float: left;
+    width: 19.1489%;
+  }
+
+  /* .content {
+      float: right;
+      width: 79.7872%;
+    } */
+
+  .wrapper {
+    margin: 0 auto;
+    grid-template-columns: 1fr 3fr;
+  }
+
+  .header,
+  .descriptionProduit {
+    grid-column: 1 / -1;
+    /* needed for the floated layout */
+    clear: both;
+  }
+}
+
+.wrapper > div,
+.wrapper > article {
+  background-color: #fff;
+  color: rgba(15, 23, 40, 1);
+  padding: 20px;
+  font-size: 150%;
+  /* needed for the floated layout*/
+  margin-bottom: 10px;
+}
+
+.grid-content article {
+  border-radius: 10px;
+  /* padding-top: 10px; */
+  padding-bottom: 20px;
+  max-height: 550px;
+
+}
+
+p {
+  max-width: 60ch;
+}
+
+.header.accueil {
+  margin-bottom: 0px;
+}
+
+.boutonAccueil {
+  all: unset;
+  background-color: #2e3c71;
+  border-color: #fff;
+  border-radius: 8px;
+  color: #fff;
+  margin-left: auto;
+  padding: 15px 40px;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.boutonAccueil a{
+  all: unset;
+  color: #fff;
+}
+
+.boutonAccueil:hover {
+  background-color: rgb(159, 155, 155);
+  color: #2e3c71;
+}
+
+.hero-text h1,
+.hero-text p {
+  font-family: "Montserrat", sans-serif;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+}
+
+.hero-text p {
+  font-size: 1.5rem;
+}
+
+.produitsVedettes {
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+
+.produitsVedettes .titredescription {
+  padding: 0;
+}
+
+.containeurBiographie {
+  margin: 100px 80px;
+}
+
+.containeurBiographie,
+.containeurActualité {
+  /* margin-left: 30px; */
+  font-family: "Montserrat", sans-serif;
+}
+
+.biographie {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 50px;
+  /* margin: 40px; */
+}
+
+.biographie picture {
+  width: 400px;
+}
+
+.biographie img {
+  width: 100%;
+  align-self: center;
+}
+
+.souscontaineurBiographie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* padding: 40px 120px; */
+  font-size: 1.1rem;
+  gap: 20px;
+}
+
+.produitsVedettes,
+.containeurActualité {
+  margin: 80px 80px;
+}
+
+.Actualité {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  margin: 0px 0px;
+}
+
+.Actualité figure {
+  margin: 0;
+}
+
+.pageAccueil .newsletterAccueil {
+  max-width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  /* padding-top: 80px; */
+  /* display: flex; */
+}
+
+.containeurActualité {
+  margin-bottom: 150px;
+}
+
+.produitsVedettes,
+.containeurBiographie,
+.containeurActualité,
+.inscriptionNewsletter.newsletterAccueil {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  /* padding-left: 10px;
+    padding-right: 10px; */
+}
+
+.pageAccueil .produitsVedettes span {
+  font-weight: bold;
+}
+
+.panneauAchatTimbre {
+  min-height: 450px;
+}
+
+.panneauAchatTimbre p {
+  margin: 0;
+}
+
+.panneauAchatTimbre span {
+  margin-top: 30px;
+}
+
+@media only screen and (max-width: 1400px) {
+  .produitsVedettes,
+  .containeurBiographie,
+  .containeurActualité,
+  .inscriptionNewsletter.newsletterAccueil {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .inscriptionNewsletter.newsletterAccueil {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .Actualité {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .biographie picture {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+
+  .souscontaineurBiographie {
+    justify-self: center;
+  }
+
+  .biographie {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 1050px) {
+  .wrapperFicheProduit .subWrapperFicheProduit {
+    display: block;
+  }
+
+  .wrapperFicheProduit .subWrapperFicheProduit .panneauAchatTimbre {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+  }
+
+  .subWrapperFicheProduit picture {
+    padding-top: 20px;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .wrapperFicheProduit .panneauLateralPhotos {
+    display: none;
+  }
+
+  .wrapper.wrapperFicheProduit {
+    display: block;
+  }
+}

@@ -1,0 +1,43 @@
+/* tableaux des listes (grid layout)
+     ================================= */
+
+     .g {
+        display: grid;
+        grid-gap: 3px;
+      }
+      .g.auteurs {
+        grid-template-columns: repeat(4, max-content);
+      }
+      .g.utilisateurs {
+        grid-template-columns: repeat(5, max-content);
+      }
+      .l {
+        display: contents;
+      }
+      .l:nth-of-type(2n) .c {
+        background-color: #eee;
+      }
+      .l:nth-of-type(2n+1) .c {
+        background-color: #ddd;
+      }
+      .t {
+        text-align: center;
+        font-weight: bold;
+        border: 2px solid cornflowerblue;
+      }
+      .t, .c {
+        box-sizing: border-box;
+        padding: 5px 20px;
+        line-height: 32px;
+        border-radius: 3px;
+      }
+      .c a, .c span  {
+        margin: 0 5px;
+      }
+      .c span {
+        color: cornflowerblue;
+        cursor: pointer;
+      }
+      .c span:hover {
+        color:mediumseagreen;
+      }

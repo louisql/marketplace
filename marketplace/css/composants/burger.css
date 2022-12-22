@@ -1,0 +1,75 @@
+/* Code du menu burger basé sur la maquette de l'étudiant E. Emery */
+
+/*------------------------------------*\
+  burger / components
+\*------------------------------------*/
+
+.burger { 
+	background-color: transparent;
+	cursor: pointer;
+	display: block;
+	margin-left: auto;
+	padding-right: 25px;
+	width: fit-content;
+}
+
+.burger__bar {
+	background-color: #fff;
+	border-radius: 10px;
+	display: block;
+	height: 3px;
+	transition: transform .3s ease;
+	width: 25px; 
+}
+
+.burger .burger__bar:not(:last-child) {
+	margin-bottom: 5px;
+}
+
+.burger:hover .burger__bar:first-child, 
+.burger:active .burger__bar:first-child {
+	transform: translateY(-3px);
+}
+
+.burger:hover .burger__bar:last-child, 
+.burger:active .burger__bar:last-child {
+	transform: translateY(3px);
+}
+
+button {
+	border: none;
+	outline: none;
+}
+
+.burger-search  {
+	margin: 25px 0 0 8vw;
+}
+
+.burger-search p {
+	text-transform: uppercase;
+	justify-content: center;
+	
+}
+
+.burger-search img {
+	padding-top: 5px;
+	padding-left: 10px;
+}
+
+.burger,
+button {
+	/* background-color: black; */
+}
+
+@media only screen and (min-width: 1024px) {
+	.burger-search  {
+		display: none;
+	}
+}
+
+@media only screen and (min-width: 1100px) {
+	.burger,
+	button {
+		display: none;
+	}
+}

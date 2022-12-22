@@ -1,0 +1,92 @@
+{# {{oUtilisateur.utilisateur_id  | json_encode(constant('JSON_PRETTY_PRINT')) }}
+{{erreurs  | json_encode(constant('JSON_PRETTY_PRINT')) }} #}
+ 
+
+<section class="flexForm">
+  <h1>{{ titre|upper }}</h1>
+
+  <form enctype="multipart/form-data" method="POST" action="membre?entite=enchere&action=a" class="signupForm">
+
+  
+   <input type="hidden" name="utilisateur_id" value="{{oUtilisateur.utilisateur_id}}">
+
+  <label for="dateDebutEnchere">Date Début de l'enchère:</label>
+  <input type="date" id="dateDebutEnchere" name="dateDebutEnchere" value="{{ enchere.dateDebutEnchere }}">
+  <span class="errorField">&nbsp;{{ erreurs.dateDebutEnchere }}</span>
+
+  <label for="dateFinEnchere">Date Fin de l'enchère:</label>
+  <input type="date" id="dateFinEnchere" name="dateFinEnchere" value="{{ enchere.dateFinEnchere }}">
+  <span class="errorField">&nbsp;{{ erreurs.dateFinEnchere }}</span>
+
+  <label for="nomTimbre">Nom du timbre:</label>
+  <input type="text" id="nomTimbre" name="nomTimbre" value="{{ enchere.nomTimbre }}">
+  <span class="errorField">&nbsp;{{ erreurs.nomTimbre }}</span>
+
+  <label for="dateCreationTimbre">Date Création Timbre:</label>
+  <input type="number" id="dateCreationTimbre" name="dateCreationTimbre" value="{{ enchere.dateCreationTimbre }}">
+  <span class="errorField">&nbsp;{{ erreurs.dateCreationTimbre }}</span>
+
+  <label for="paysOrigineTimbre">Pays d'origine:</label>
+  <input type="text" id="paysOrigineTimbre" name="paysOrigineTimbre" value="{{ enchere.paysOrigineTimbre }}">
+  <span class="errorField">&nbsp;{{ erreurs.paysOrigineTimbre }}</span>
+
+  <label for="conditionTimbre">Condition du Timbre:</label>
+  <input type="text" id="conditionTimbre" name="conditionTimbre" value="{{ enchere.conditionTimbre }}">
+  <span class="errorField">&nbsp;{{ erreurs.conditionTimbre }}</span>
+
+  <label for="dimensionsTimbre">Dimensions du Timbre:</label>
+  <input type="text" id="dimensionsTimbre" name="dimensionsTimbre" value="{{ enchere.dimensionsTimbre }}">
+  <span class="errorField">&nbsp;{{ erreurs.dimensionsTimbre }}</span>
+  
+  <label for="couleurTimbre">Couleur du Timbre:</label>
+  <input type="text" id="couleurTimbre" name="couleurTimbre" value="{{ enchere.couleurTimbre }}">
+  <span class="errorField">&nbsp;{{ erreurs.couleurTimbre }}</span>
+  
+  <label for="descriptionTimbre">Description:</label>
+  <input type="textarea" id="descriptionTimbre" name="descriptionTimbre" value="{{ enchere.descriptionTimbre }}">
+  <span class="errorField">&nbsp;{{ erreurs.descriptionTimbre }}</span>
+
+  <!-- MAX_FILE_SIZE must precede the file input field -->
+        {# <input type="hidden" name="MAX_FILE_SIZE" value="30000"> #}
+
+        <!-- Name of input element determines name in $_FILES array -->
+        Ajouter une image: <input name="userfile" type="file" />
+
+  <button type="submit" value="Envoyer">Envoyer</button>
+</form>
+
+
+{#  
+    <input type="hidden" name="utilisateur_id" value="{{oUtilisateur.utilisateur_id}}">
+
+    <label>Date Début de l'enchere</label>
+    <input type="date" name="dateDebutEnchere" value="{{ utilisateur.utilisateur_nom }}">
+    <span class="errorField">&nbsp;{{ erreurs.nom }}</span>
+
+    <label>Prénom</label>
+    <input name="utilisateur_prenom" value="{{ utilisateur.utilisateur_prenom }}">
+    <span class="errorField">&nbsp;{{ erreurs.prenom }}</span>
+
+    <label>Courriel</label>
+    <input name="utilisateur_courriel" value="{{ utilisateur.utilisateur_courriel }}">
+    <span class="errorField">&nbsp;{{ erreurs.courriel }}</span>
+
+    <label>Mot de Passe</label>
+    <input type="password" name="utilisateur_password" value="{{ utilisateur.utilisateur_password }}">
+    <span class="errorField">&nbsp;{{ erreurs.password }}</span>
+
+    <label>Profil</label>
+    <select name="utilisateur_profil">
+      <option value="1">Membre</option>
+      <option value="2" selected>Vendeur</option>
+      <option value="3">Administrateur</option>
+    </select>
+    <span class="errorField">&nbsp;{{ erreurs.profil }}</span>
+
+    <input type="submit" value="Envoyer">
+
+  </form>
+#}
+
+
+</section>

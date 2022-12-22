@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="script/main.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+      crossorigin="anonymous"
+    />
+
+    <title>Accueil</title>
+    <script src="script/menu.js"></script>
+  </head>
+
+  <body class="pageAccueil">
+    <header class="header accueil">
+      <div class="mainHeader">
+        <picture><img src="medias/img/logo-1-alt.png" alt="" /></picture>
+        <a href="accueil">Accueil</a>
+        <a href="catalogue">Place de Marché</a>
+        <a href="#">Blog</a>
+        <a href="admin?entite=utilisateur&action=l">Administration</a>
+        <input
+          type="text"
+          placeholder="Chercher sur Stampee"
+          aria-label="champ-recherche"
+        />
+        <a href="membre">Connexion</a>
+        <a href="membre?entite=enchere&action=a">Vente</a>
+        {# <a href="admin?entite=utilisateur&action=a">Connexion</a> #}
+        <a href="inscription">Inscription</a>
+        <button class="burger" aria-label="burger" data-js-burger>
+          <span class="burger__bar"></span>
+          <span class="burger__bar"></span>
+          <span class="burger__bar"></span>
+        </button>
+      </div>
+    </header>
+
+    <input
+      class="input-bar__input"
+      type="text"
+      id="input-bar-mobile"
+      name="input-bar"
+      placeholder="Trouvez une enchère"
+      aria-label="champ-recherche"
+    />
+
+    <aside class="menu__mobile menu--close" data-js-menu>
+      <!-- Bouton close -->
+      <div class="menu__close--wrapper" data-js-close>
+        <button class="menu__close" aria-label="menu-close"></button>
+      </div>
+      <!-- Contenu du menu mobile-->
+      <ul class="menu__list menu__list--mobile">
+        <li class="menu__item menu__item--principal">
+          <a class="menu__link" href="accueil">Accueil</a>
+        </li>
+        <li class="menu__item menu__item--principal">
+          <a class="menu__link" href="catalogue">Place de Marché</a>
+        </li>
+        <li class="menu__item menu__item--principal">
+          <a class="menu__link" href="admin?entite=utilisateur&action=l">Administration</a>
+        </li>
+        <li class="menu__item menu__item--principal">
+          <a class="menu__link" href="membre">Connexion</a>
+        </li>
+        <li class="menu__item menu__item--principal">
+          <a class="menu__link" href="membre?entite=enchere&action=a">Vente</a>
+        </li>
+        <li class="menu__item menu__item--principal">
+          <a class="menu__link" href="inscription">Inscription</a>
+        </li>
+      </ul>
+      <a href="accueil.html"
+        ><img
+          class="footer__logo"
+          src="medias/img/logo-1-alt.png"
+          alt="logo Stampee"
+      /></a>
+    </aside>
+
+  {{ include(templateMain) }}
+
+      <footer class="footer">
+      <div class="subContainerFooter">
+        <div class="footerMobile">
+          <h3>STAMPEE</h3>
+          <p>Des timbres accessibles à tous, partout dans le monde</p>
+        </div>
+        <div class="footerMobile">
+          <h3>NOUS CONTACTER</h3>
+          <span> contact@stampee.ca </span>
+        </div>
+        <div class="footerDesktop">
+          <h3>STAMPEE</h3>
+          <p>Des timbres accessibles à tous, partout dans le monde</p>
+          <h3>NOUS CONTACTER</h3>
+          <span> contact@stampee.ca </span>
+        </div>
+        <div class="liensUtiles footerDesktop">
+          <h3>LIENS UTILES</h3>
+          <ul>
+            <li>Accueil</li>
+            <li>Place de Marché</li>
+            <li>Blog</li>
+            <li>A Propos</li>
+            <li>Nous contacter</li>
+          </ul>
+        </div>
+        <div class="footerDesktop">
+          <h3>PLAN DU SITE</h3>
+          <ul>
+            <li>Site Mobile</li>
+            <li>FAQ</li>
+            <li>Support</li>
+            <li>Confidentialité</li>
+            <li>Nos Conditions</li>
+          </ul>
+        </div>
+        <div class="liensUtiles footerMobile">
+          <div>
+            <h3>LIENS UTILES</h3>
+            <ul>
+              <li>Accueil</li>
+              <li>Place de Marché</li>
+              <li>Blog</li>
+              <li>A Propos</li>
+              <li>Nous contacter</li>
+            </ul>
+          </div>
+          <div>
+            <h3>PLAN DU SITE</h3>
+            <ul>
+              <li>Site Mobile</li>
+              <li>FAQ</li>
+              <li>Support</li>
+              <li>Confidentialité</li>
+              <li>Nos Conditions</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footerLogoContainer">
+          <picture><img src="medias/img/logo-1-alt.png" alt="" /></picture>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

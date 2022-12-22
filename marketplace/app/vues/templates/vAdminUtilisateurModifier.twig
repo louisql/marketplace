@@ -1,0 +1,36 @@
+<section>
+  <h1>{{ titre|upper }}</h1>
+  
+  <form method="POST" action="admin?entite=utilisateur&action=m&utilisateur_id={{ utilisateur.utilisateur_id }}">
+
+    <label>Nom</label>
+    <input name="utilisateur_nom" value="{{ utilisateur.nomUtilisateur }}">
+    <span class="errorField">&nbsp;{{ erreurs.nom }}</span>
+
+    <label>Prénom</label>
+    <input name="utilisateur_prenom" value="{{ utilisateur.prenomUtilisateur }}">
+    <span class="errorField">&nbsp;{{ erreurs.prenom }}</span>
+
+    <label>Courriel</label>
+    <input name="utilisateur_courriel" value="{{ utilisateur.courrielUtilisateur }}">
+    <span class="errorField">&nbsp;{{ erreurs.courriel }}</span>
+
+    <label>Mot de Passe</label>
+    <input type="password" name="utilisateur_password" value="{{ utilisateur.passwordUtilisateur }}">
+    <span class="errorField">&nbsp;{{ erreurs.password }}</span>
+
+    <label>Profil</label>
+    <select name="utilisateur_profil">
+      <option value="1">Membre</option>
+      <option value="2" selected>Vendeur</option>
+      <option value="3">Administrateur</option>
+    </select>
+    <span class="errorField">&nbsp;{{ erreurs.profil }}</span>
+
+
+    <input type="hidden" name="utilisateur_id" value="{{ utilisateur.idUtilisateur }}">
+
+    <input type="submit" value="Envoyer">
+
+  </form>
+</section>

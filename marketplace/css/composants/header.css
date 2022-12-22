@@ -1,0 +1,120 @@
+.header.thread {
+  background-color: #ffffff;
+  color: #6b6b6b;
+  font-size: 1rem;
+}
+
+.header {
+  /* height: 250px; */
+}
+
+
+
+.header img {
+  height: 100px;
+  padding: 10px 35px;
+}
+
+.mainHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mainHeader input {
+  border: 1px solid #e7e7e7;
+  border-radius: 4px;
+  height: 30px;
+  /* padding-right: 25px; */
+  padding: 20px 20px;
+  background: url("https://static.thenounproject.com/png/101791-200.png")
+    no-repeat right;
+  background-size: 20px;
+  background-color: white;
+  background-position: 155px;
+}
+
+.mainHeader a {
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  font-family: "Cinzel", serif;
+  /* padding: 0px 20px; */
+}
+
+.mainHeader a:hover {
+  border-bottom: 1px solid white;
+}
+
+.panier {
+  background: url(../../img/shopping-bag.png);
+  height: 40px;
+  background-size: cover;
+  width: 20px;
+  margin: 0 10px 0 100px;
+  position: relative;
+}
+
+.mainHeader .shoppingCart {
+  background-color: #f1f1f1;
+  padding: 30px 35px;
+}
+
+.header {
+  background-color: var(--main-bg-color);
+  color: #ffffff;
+}
+
+.header {
+  margin-bottom: 10px;
+}
+
+/* responsive search bar */
+.input-bar__input {
+  display: none;
+  height: 70px;
+  width: 100%;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background: url(https://static.thenounproject.com/png/101791-200.png)
+    no-repeat right;
+  padding: 20px 20px;
+  background-size: 20px;
+  background-color: white;
+  background-position: 90%;
+}
+
+@media only screen and (max-width: 1100px) {
+  .mainHeader a {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .input-bar__input {
+    display: block;
+  }
+
+  .header input {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .mainHeader {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .header img {
+    height: 60px;
+    padding-left: 10px;
+  }
+}

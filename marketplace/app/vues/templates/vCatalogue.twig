@@ -1,0 +1,276 @@
+{# <pre>
+{{timbres | json_encode(constant('JSON_PRETTY_PRINT')) }} #}
+
+<div class="wrapper catalogue">
+      <aside class="sidebar">
+        <!-- <div class="search">
+          <form action="#">
+            <input type="text" placeholder=" Recherche" name="search">
+            <button>
+              <i class="fa fa-search" style="font-size: 18px"> </i>
+            </button>
+          </form>
+        </div> -->
+        <details open>
+          <summary>
+            <h1 class="mainSidebarTitle">Filtrer la recherche</h1>
+          </summary>
+          <details open>
+            <summary>
+              <h1>Catégories</h1>
+            </summary>
+
+              <label for="categories">Select a category:</label><br>
+                <select id="categories" name="categories">
+                {% set categories = [] %}
+                  {% for timbre in timbres %}
+                   {% if timbre.paysOrigineTimbre not in categories %}
+                     {% set categories = categories|merge([timbre.paysOrigineTimbre]) %}
+                   {% endif %}
+                 {% endfor %}
+                 {% for category in categories %}
+                   <option value="{{ category }}">{{ category }}</option>
+                 {% endfor %}
+               </select>
+
+            {# <div>
+              <div class="listeCategorie">
+                <span>Tous</span>
+                <span>599</span>
+              </div>
+              <div class="listeCategorie">
+                <span>Rares</span>
+                <span>93</span>
+              </div>
+              <div class="listeCategorie">
+                <span>Europe</span>
+                <span>200</span>
+              </div>
+              <div class="listeCategorie">
+                <span>Non tamponé</span>
+                <span>155</span>
+              </div>
+              <div class="listeCategorie">
+                <span>Amériques</span>
+                <span>200</span>
+              </div>
+              <div class="listeCategorie">
+                <span>Autre</span>
+                <span>69</span>
+              </div>
+            </div> #}
+          </details>
+          <details open>
+            <summary>
+              <h1>Trier la recherche</h1>
+            </summary>
+            <div>
+              <ul>
+                <li>Timbres Neuf</li>
+                <li>La sélection du Lord</li>
+                <li>Les vendeurs recommandés</li>
+                <li>Votre sélection</li>
+              </ul>
+            </div>
+          </details>
+          <details open>
+            <summary>
+              <h1>Prix</h1>
+            </summary>
+            <!-- mettre une image pour le slideré -->
+            <div class="containeurPrix">
+              <h3>Prix Minimal</h3>
+              <input type="text" aria-label="prixMinimal" />
+              <h3>Prix Maximal</h3>
+              <input type="text" aria-label="prixMaximal" />
+            </div>
+          </details>
+          <!-- Double range slider (flat design)  -->
+          <details open>
+            <summary>
+              <h1>Affichage</h1>
+            </summary>
+            <div class="containeurBoutonsAff">
+              <button class="bouttonsListe" data-js-liste>
+                <i class="fa fa-bars"></i> Liste
+              </button>
+              <button class="bouttonsListe" data-js-grille>
+                <i class="fa fa-th-large"></i> Grille
+              </button>
+            </div>
+          </details>
+        </details>
+      </aside>
+
+      <div class="content grid-content">
+        {% for timbre in timbres %}
+            <article>
+              <div class="containeurArticle containeurDessusImage">
+                <h1>État: {{timbre.conditionTimbre}}</h1>
+                <span>Exclusivité</span>
+              </div>
+              <picture><img src="{{timbre.nomImage}}" alt="" /></picture>
+              {# <picture><img src="./assets/img/timbreResized.png" alt="" /></picture> #}
+
+              <div class="containeurArticle">
+                <h1>Timbre Rare</h1>
+                <span>Enchère: ${{timbre.MontantMiseMax | length == 0 ? '0' : timbre.MontantMiseMax }}</span>
+              </div>
+              <span>{{timbre.nomTimbre}}</span>
+              <div class="containeurArticle">
+                {# <p class="texteBouton"><a href="membre?entite=timbre&action=l&timbre_id={{ timbre.idTimbre }}">INFORMATION TIMBRE</a></p> #}
+                <button class="boutonAchat texteBouton"> <a href="membre?entite=timbre&action=l&timbre_id={{ timbre.idTimbre }}">DÉTAILS</a></button>
+                {# <button class="boutonAchat texteBouton"> <a href="membre?entite=enchere&action=m&enchere_id={{ timbre.idEnchere }}">PLACER UNE ENCHÈRE</a></button> #}
+              </div>
+            </article>
+        {% endfor %}
+
+
+
+
+        {# <article>
+          <div class="containeurArticle containeurDessusImage">
+            <h1>1 jour restant</h1>
+            <span>Exclusivité</span>
+          </div>
+          <picture><img src="./assets/img/timbreResized.png" alt="" /></picture>
+
+          <div class="containeurArticle">
+            <h1>Timbre Rare</h1>
+            <span>$28</span>
+          </div>
+          <span>U.S. #1 Used with Nice Cancel</span>
+          <div class="containeurArticle">
+            <p class="texteBouton">SUIVRE CETTE VENTE</p>
+            <button class="boutonAchat texteBouton">PLACER UNE ENCHÈRE</button>
+          </div>
+        </article>
+        <article>
+          <div class="containeurArticle containeurDessusImage">
+            <h1>Plus que 15h47</h1>
+            <span>Exclusivité</span>
+          </div>
+          <picture
+            ><img src="./assets/img/LaborStampResized.jpg" alt=""
+          /></picture>
+
+          <div class="containeurArticle">
+            <h1>Timbre Rare</h1>
+            <span>$333</span>
+          </div>
+          <span>US 1 Used Blue Cancel VF 1847 SCV $350.00 (Or)</span>
+          <div class="containeurArticle">
+            <p class="texteBouton">SUIVRE CETTE VENTE</p>
+            <button class="boutonAchat texteBouton">PLACER UNE ENCHÈRE</button>
+          </div>
+        </article>
+        <article>
+          <div class="containeurArticle containeurDessusImage">
+            <h1>3 jours restants</h1>
+            <span>Exclusivité</span>
+          </div>
+          <picture
+            ><img src="./assets/img/TimbreRondResized.jpg" alt=""
+          /></picture>
+
+          <div class="containeurArticle">
+            <h1>Timbre Rare</h1>
+            <span>$1,000</span>
+          </div>
+          <span
+            >Macao (China) 232, 233, 236, 238A Used/MLH VF 1912-24 SCV $15.75
+            (jr*)</span
+          >
+          <div class="containeurArticle">
+            <p class="texteBouton">SUIVRE CETTE VENTE</p>
+            <button class="boutonAchat texteBouton">PLACER UNE ENCHÈRE</button>
+          </div>
+        </article>
+        <article>
+          <div class="containeurArticle containeurDessusImage">
+            <h1>7 jours restants</h1>
+            <span>Exclusivité</span>
+          </div>
+          <picture><img src="./assets/img/bird.jpg" alt="" /></picture>
+
+          <div class="containeurArticle">
+            <h1>Timbre Rare</h1>
+            <span>$95</span>
+          </div>
+          <span>U.S. #523 USED WITH PSE CERT VF 80</span>
+          <div class="containeurArticle">
+            <p class="texteBouton">SUIVRE CETTE VENTE</p>
+            <button class="boutonAchat texteBouton">PLACER UNE ENCHÈRE</button>
+          </div>
+        </article>
+        <article>
+          <div class="containeurArticle containeurDessusImage">
+            <h1>Plus que 56 min</h1>
+            <span>Exclusivité</span>
+          </div>
+          <picture><img src="./assets/img/newStamp1.jpg" alt="" /></picture>
+
+          <div class="containeurArticle">
+            <h1>Timbre Rare</h1>
+            <span>$16,400</span>
+          </div>
+          <span>U.S. #USED OFFICIAL SET/MIXED CONDITION </span>
+          <div class="containeurArticle">
+            <p class="texteBouton">SUIVRE CETTE VENTE</p>
+            <button class="boutonAchat texteBouton">PLACER UNE ENCHÈRE</button>
+          </div>
+        </article>
+
+        <article>
+          <div class="containeurArticle containeurDessusImage">
+            <h1>Plus que 3 h 56 min</h1>
+            <span>Exclusivité</span>
+          </div>
+          <picture><img src="./assets/img/newStamp2.jpg" alt="" /></picture>
+
+          <div class="containeurArticle">
+            <h1>Timbre Rare</h1>
+            <span>$30</span>
+          </div>
+          <span>USA 834 - 5 Dollar Top Plate # Block - VF/XF Mint-nh </span>
+          <div class="containeurArticle">
+            <p class="texteBouton">SUIVRE CETTE VENTE</p>
+            <button class="boutonAchat texteBouton">PLACER UNE ENCHÈRE</button>
+          </div>
+        </article>
+        <article>
+          <div class="containeurArticle containeurDessusImage">
+            <h1>1 jour restant</h1>
+            <span>Exclusivité</span>
+          </div>
+          <picture><img src="./assets/img/newStamp4.jpg" alt="" /></picture>
+
+          <div class="containeurArticle">
+            <h1>Timbre Rare</h1>
+            <span>$210</span>
+          </div>
+          <span>U.S. #SET/MIXED CONDITION </span>
+          <div class="containeurArticle">
+            <p class="texteBouton">SUIVRE CETTE VENTE</p>
+            <button class="boutonAchat texteBouton">PLACER UNE ENCHÈRE</button>
+          </div>
+        </article>
+        <article>
+          <div class="containeurArticle containeurDessusImage">
+            <h1>1 jour restant</h1>
+            <span>Exclusivité</span>
+          </div>
+          <picture><img src="./assets/img/newStamp3.jpg" alt="" /></picture>
+
+          <div class="containeurArticle">
+            <h1>Timbre Rare</h1>
+            <span>$2,470</span>
+          </div>
+          <span>U.S. #293 USED </span>
+          <div class="containeurArticle">
+            <p class="texteBouton">SUIVRE CETTE VENTE</p>
+            <button class="boutonAchat texteBouton">PLACER UNE ENCHÈRE</button>
+          </div>
+        </article> #}
+      </div>
+    </div>

@@ -1,0 +1,53 @@
+
+
+<section>
+  <h1>{{ titre|upper }}</h1>
+  
+  <form method="POST" action="admin?entite=utilisateur&action=a" class="signupForm">
+
+    <label>Nom</label>
+    <input name="utilisateur_nom" value="{{ utilisateur.utilisateur_nom }}">
+    <span class="errorField">&nbsp;{{ erreurs.nom }}</span>
+
+    <label>Prénom</label>
+    <input name="utilisateur_prenom" value="{{ utilisateur.utilisateur_prenom }}">
+    <span class="errorField">&nbsp;{{ erreurs.prenom }}</span>
+
+    <label>Courriel</label>
+    <input name="utilisateur_courriel" value="{{ utilisateur.utilisateur_courriel }}">
+    <span class="errorField">&nbsp;{{ erreurs.courriel }}</span>
+
+    <label>Mot de Passe</label>
+    <input type="password" name="utilisateur_password" value="{{ utilisateur.utilisateur_password }}">
+    <span class="errorField">&nbsp;{{ erreurs.password }}</span>
+
+    <label>Profil</label>
+    <select name="utilisateur_profil">
+      <option value="1">Membre</option>
+      <option value="2" selected>Vendeur</option>
+      <option value="3">Administrateur</option>
+    </select>
+    <span class="errorField">&nbsp;{{ erreurs.profil }}</span>
+
+    <input type="submit" value="Envoyer">
+
+  </form>
+
+
+<h1>CONNEXION</h1>
+
+  <form method="POST" action="admin">
+
+    <br><span>&nbsp;{{ messageErreurConnexion }}</span>
+
+    <label>Courriel</label>
+    <input name="utilisateur_courriel" value="">
+
+    <label>Mot de passe</label>
+    <input type="password" name="utilisateur_mdp" value="">
+  
+    <input type="submit" value="Envoyer">
+
+</form>
+
+</section>

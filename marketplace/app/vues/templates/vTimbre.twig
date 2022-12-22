@@ -1,0 +1,210 @@
+{# <pre>
+{{timbre | json_encode(constant('JSON_PRETTY_PRINT')) }}
+{{oUtilisateur.utilisateur_id  | json_encode(constant('JSON_PRETTY_PRINT')) }} #}
+
+
+
+<div class="wrapper wrapperFicheProdut">
+      <div class="header thread">
+        Events The 306th HipStamp No Reserve Auction U.S. #1 Used with Nice
+        Cancel
+      </div>
+
+      <aside class="sidebar panneauLateralPhotos">
+        <picture><img src="{{timbre[0].nomImage}}" alt="" /></picture>
+        <picture><img src="medias/img/timbreUSA2.jpg" alt="" /></picture>
+        <picture><img src="medias/img/timbreUSA3.jpg" alt="" /></picture>
+        <!-- <picture><img src="./assets/img/timbreUSA4.jpg" alt=""></picture> -->
+      </aside>
+
+      <div class="content grid-content subWrapperFicheProduit">
+        <article>
+          <!-- <picture><img src="./assets/img/timbreResized.png" alt=""></picture> -->
+          <picture>
+            <img
+              src="{{timbre[0].nomImage}}"
+              alt=""
+              class="imgPrincipaleFiche"
+            />
+          </picture>
+        </article>
+
+        <article class="panneauAchatTimbre">
+          <div class="containeurArticle containeurDessusImage">
+            <h1>État: {{timbre[0].conditionTimbre}}</h1>
+            <span>Exclusivité</span>
+          </div>
+          <h3></h3>
+          <span><b>Informations</b></span>
+          <div>
+            <p>Plus haute enchere:</p>
+            <p>${{timbre[0].MontantMiseMax | length == 0 ? '0' : timbre[0].MontantMiseMax }}</p>
+          </div>
+            <div>
+              <p>Fin des enchères:</p>
+              <p>{{timbre[0].dateFinEnchere | length == 0 ? 'Inconnu' : timbre[0].dateFinEnchere |date('Y-m-d') }}</p>
+            </div>
+  
+
+          <span class="reducedFontSizeFicheProduit"><b>Frais de Port</b></span>
+          <div class="reducedFontSizeFicheProduit">
+            <p>Canada:</p>
+            <p>$1.00</p>
+          </div>
+          <div class="reducedFontSizeFicheProduit">
+            <p>Reste du Monde:</p>
+            <p>$2.25</p>
+          </div>
+
+          <div>
+            <!-- <p>Les enchères sont ouvertes</p> -->
+          </div>
+
+          <div class="containeurArticle containeurBoutons">
+             <form class="formEnchere" method="POST" action="membre?entite=enchere&action=m&utilisateur_id={{ oUtilisateur.utilisateur_id  }}&enchere_id={{ timbre[0].idEnchere }}" class="signupForm">
+
+            <label class="labelFormMise">Montant de votre enchère:</label>
+            <div class="boutonEnchereContainer">
+              
+              <input type="number" class="enchereTextField" required min="{{timbre[0].MontantMiseMax}}" name="mise_montant" value="{{ membre.mise_montant }}"> {# Verifier su je mets mise plutot que membre avant le point #}
+                  {# <input type="number" name="mise_montant" value="{{ utilisateur.utilisateur_nom }}"> #}
+              
+                  <span class="errorField">&nbsp;{{ erreurs.nom }}</span>
+              
+                  <input type="submit" class="sendEnchere" value="Envoyer">
+            </div>
+
+  </form>
+          </div>
+          <!-- <div>
+            <p></p>
+          </div> -->
+        </article>
+      </div>
+      <div class="descriptionProduit">
+        <!-- debut grille recommandation -->
+
+        <div class="content grid-content titredescription">
+          <h2>Informations</h2>
+        </div>
+        <div class="content grid-content pDescription">
+          <div>
+            <h3>Description</h3>
+            <p>
+              {{timbre[0].descriptionTimbre}}
+            </p>
+          </div>
+          <div class="sectionDetail">
+            <h3>Détails</h3>
+            <ul>
+              <li><b>Pays</b>: {{timbre[0].paysOrigineTimbre}}</li>
+              <li><b>Couleur</b>: {{timbre[0].couleurTimbre}}</li>
+              <li><b>Condition</b>: {{timbre[0].conditionTimbre}}</li>
+              <li><b>Année</b>: {{timbre[0].dateCreationTimbre}}</li>
+              <li><b>Dimensions Timbres</b>: {{timbre[0].dimensionsTimbre}}</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="content grid-content titredescription">
+          <h2>Recommandations</h2>
+          <div></div>
+        </div>
+        <div class="content grid-content containeurRecommandations">
+          <article>
+            <div class="containeurArticle containeurDessusImage">
+              <h1>Plus que 15h47</h1>
+              <span>Exclusivité</span>
+            </div>
+            <picture
+              ><img src="medias/img/timbreResized.png" alt=""
+            /></picture>
+
+            <div class="containeurArticle">
+              <h1>Timbre Rare</h1>
+              <span>$1,000</span>
+            </div>
+            <span
+              >U.S. #1 Used with <br />
+              Nice Cancel</span
+            >
+          </article>
+          <article>
+            <div class="containeurArticle containeurDessusImage">
+              <h1>1 jour restant</h1>
+              <span>Exclusivité</span>
+            </div>
+            <picture
+              ><img src="medias/img/LaborStampResized.jpg" alt=""
+            /></picture>
+
+            <div class="containeurArticle">
+              <h1>Timbre Rare</h1>
+              <span>$1,000</span>
+            </div>
+            <span
+              >US 1 Used Blue Cancel <br />
+              VF 1847 SCV $350.00 (Or)</span
+            >
+          </article>
+          <article>
+            <div class="containeurArticle containeurDessusImage">
+              <h1>3 jours restant</h1>
+              <span>Exclusivité</span>
+            </div>
+            <picture
+              ><img src="medias/img/TimbreRondResized.jpg" alt=""
+            /></picture>
+
+            <div class="containeurArticle">
+              <h1>Timbre Rare</h1>
+              <span>$1,000</span>
+            </div>
+            <span
+              >Macao (China) 232, 233, 236, 238A <br />
+              Used/MLH VF 1912-24 SCV</span
+            >
+          </article>
+          <article>
+            <div class="containeurArticle containeurDessusImage">
+              <h1>Plus que 56 min</h1>
+              <span>Exclusivité</span>
+            </div>
+            <picture><img src="medias/img/bird.jpg" alt="" /></picture>
+
+            <div class="containeurArticle">
+              <h1>Timbre Rare</h1>
+              <span>$1,000</span>
+            </div>
+            <span>U.S. #523 USED WITH PSE CERT VF 80</span>
+          </article>
+        </div>
+
+        <!-- fin grille recommandation -->
+        <div class="inscriptionNewsletter">
+          <div class="firstContainerNewsletterAccueil">
+            <h1>S'INSCRIRE À L'INFOLETTRE</h1>
+            <p>Restons en contact et ne manquez pas les meilleures affaires!</p>
+            <div class="search">
+              <form action="#">
+                <input
+                  type="text"
+                  placeholder="you@you.com"
+                  name="search"
+                  aria-label="champ-inscriptionNewsletter"
+                />
+                <button aria-label="envoiNewsletter">
+                  <i class="fa fa-search" style="font-size: 18px"> </i>
+                </button>
+              </form>
+            </div>
+          </div>
+          <div class="secondContainerNewsletterAccueil">
+            <h3>Vous recevrez GRATUITEMENT notre guide de timbres</h3>
+            <picture>
+              <img src="medias/img/livreTimbre.jpg" alt="" />
+            </picture>
+          </div>
+        </div>
+      </div>
+    </div>

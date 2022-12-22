@@ -1,0 +1,38 @@
+{# <script>history.pushState({}, '', 'admin?entite=utilisateur')</script> #}
+<script>history.pushState({}, '', 'membre?entite=enchere')</script>
+{# <pre>
+{{encheres | json_encode(constant('JSON_PRETTY_PRINT')) }} #}
+
+<section>
+  <h1>{{ titre|upper }}</h1>
+  <h2><a href="membre?entite=enchere&action=a">Ajouter une enchere</a></h2>
+  <p class="messageRetourAction {{ classRetour }}">{{ messageRetourAction|raw}}&nbsp;</p>   
+  <div class="g utilisateurs">
+    <div class="t">Id</div>
+    <div class="t">Nom, Prénom du vendeur
+</div>
+    <div class="t">Début de l'enchère</div>
+    <div class="t">Fin de l'enchère</div>    
+    {# <div class="t">Actions</div> #}
+    <div class="t">Mise Maximale</div>
+  {% for enchere in encheres %}
+    <div class="l">
+      <div class="c dr">{{ enchere.idEnchere }}</div>
+      <div class="c   ">{{ enchere.nomUtilisateur }}, {{ enchere.prenomUtilisateur }}</div>
+      <div class="c dr  ">{{ enchere.dateDebutEnchere }}</div>
+      <div class="c ">{{ enchere.dateFinEnchere }}</div>
+      {# <div class="c   ">
+        <a href="admin?entite=utilisateur&action=m&utilisateur_id={{ utilisateur.idUtilisateur }}">modifier</a>
+        {# {% if not auteur.nb_livres %} #}
+        {# <span class="confirmer" data-href="admin?entite=utilisateur&action=s&utilisateur_id={{ utilisateur.idUtilisateur }}">supprimer</span> #}
+        {# {% endif %} #}
+        {# <a href="admin?entite=utilisateur&action=generer_mdp&utilisateur_id={{ utilisateur.idUtilisateur }}">générer mdp</a> #}
+      {# </div>  #}
+      <div class="c   ">Mise Maximale : {{ enchere.MontantMise | length == 0 ? '0' : enchere.MontantMise }} $</div>
+
+    </div>
+  {% endfor %} 
+  </div>
+</section>
+{{ include("modaleSuppression.twig") }}
+
